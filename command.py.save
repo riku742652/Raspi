@@ -1,0 +1,4 @@
+/home/pi/aquestalkpi/AquestalkPi -t "aa"import commands
+
+commands.getoutput('/home/pi/aquestalkpi/AquestalkPi -t "aa" ')
+print("hello")
