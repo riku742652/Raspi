@@ -3,7 +3,6 @@ import RPi.GPIO as GPIO
 import time
 
 LEDPIN = 17
-
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LEDPIN, GPIO.OUT)
 GPIO.output(LEDPIN, True)
