@@ -12,11 +12,16 @@ RED = 23
 
 GPIO.setmode(GPIO.BCM)
 
-str =  result['condition']['text']
-location = result['location']['city']
-temp = result['condition']['temp']
-date = result['condition']['date']
+str =  result['forecasts']['text']
+location = result['forecasts']['city']
+date = result['forecasts']['date']
+high = result['forecasts']['high']
+low = result['forecasts']['low']
 
+print(str)
+print(date)
+print(high)
+print(low)
 commands.getoutput('/home/pi/aquestalkpi/AquesTalkPi "%s"|aplay'%location)
 commands.getoutput('/home/pi/aquestalkpi/AquesTalkPi "の天気は"|aplay')
 
@@ -42,7 +47,7 @@ if('Rain' in str):
 	GPIO.output(BLUE,True)
 commands.getoutput('/home/pi/aquestalkpi/AquesTalkPi "です。"|aplay')
 print str
-commands.getoutput('/home/pi/aquestalkpi/AquesTalkPi "気温は"|aplay')
+commands.getoutput('/home/pi/aquestalkpi/AquesTalkPi "平均気温は"|aplay')
 commands.getoutput('/home/pi/aquestalkpi/AquesTalkPi "%s"|aplay'%temp)
 commands.getoutput('/home/pi/aquestalkpi/AquesTalkPi "どです。"|aplay')
 print temp
